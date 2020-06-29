@@ -1,0 +1,19 @@
+{
+  "name": "electron-react-rust",
+  "productName": "ElectronReactRust",
+  "version": "1.0.0",
+  "description": "A Boilerplato template for Electron, React and Rust to create a very performant desktop app",
+  "main": "./main.prod.js",
+  "author": "Rousan Ali <hello@rousan.io> (https://rousan.io)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/boilerplato/electron-react-rust-template.git"
+  },
+  "homepage": "https://github.com/boilerplato/electron-react-rust-template",
+  "scripts": {
+    "electron-rebuild": "node -r ../internals/scripts/babel-register.js ../internals/scripts/electron-rebuild.js",
+    "postinstall": "yarn electron-rebuild"
+  },
+  "license": "MIT",
+  "dependencies": {}
+}

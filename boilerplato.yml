@@ -1,0 +1,60 @@
+version: 1.0.0
+template:
+  engine: handlebars
+  path: "."
+  extension: ".boiler"
+data:
+  - name: product_name
+    type: string
+    message: "Enter app name e.g. MyApp:"
+    required: true
+  - name: app_id
+    type: string
+    message: "Enter app id e.g. com.boilerplato.ElectronReact:"
+    required: true
+  - name: app_desc
+    type: string
+    message: "Enter app description:"
+    required: true
+  - name: app_version
+    type: semver
+    message: "Enter initial version:"
+    required: false
+    defaultValue: "1.0.0"
+  - name: author
+    type: string
+    message: "Enter author e.g. John Doe <john@gmail.com> (https://john.com):"
+    required: true
+  - name: license
+    type: string
+    message: "Enter app license:"
+    required: false
+    defaultValue: ISC
+  - name: github_url
+    type: string
+    message: "Enter Repo URL?"
+    required: false
+    defaultValue: ""
+  - name: homepage
+    type: string
+    message: "App homepage?"
+    required: false
+    defaultValue: ""
+  - name: keywords
+    type: array[string]
+    message: "Enter keywords:"
+    required: false
+    defaultValue: []
+postGenerate: npm install
+helpText:
+  - "Inside that directory, you can run several commands:\n"
+  - '  {{ color "yarn electron:dev" "cyan" }}'
+  - "    Starts the development server for Electron.\n"
+  - '  {{ color "yarn native:dev" "cyan" }}'
+  - "    Starts the development server for Rust.\n"
+  - '  {{ color "yarn package" "cyan" }}'
+  - "    Package the app for current OS for production.\n"
+  - "We suggest that you begin by typing:\n"
+  - '  {{ color "cd" "cyan" }} $APP_REL_PATH'
+  - '  {{ color "yarn electron:dev" "cyan" }}'
+  - '  {{ color "yarn native:dev" "cyan" }}'
